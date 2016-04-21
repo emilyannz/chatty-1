@@ -1,0 +1,27 @@
+.main-container {
+  flex-grow: 1;
+  background: $brand-peach;
+  color: $brand-dark-grey;
+}
+
+.message-center-container {
+  display: flex;
+  flex-direction: column;
+  border-radius: $border-radius * 8;
+  background: $brand-dark-blue;
+}
+
+.message-center {
+  margin: $gutter * 4;
+  padding: $gutter * 4;
+  border-radius: $border-radius * 6;
+  background: $brand-light-blue;
+}
+
+.message-form {
+  margin: $gutter * 4;
+
+  &__input {
+    width: 100%;
+  }
+}

@@ -1,12 +1,28 @@
-<h1>Main Chat Room</h1>
-<ul>
-  {{#each model.messages as |message|}}
-    <li>{{message.id}}. {{message.createdAt}}</li>
-    <li>{{message.chatter.username}} said: {{message.content}}</li>
-  {{/each}}
+<div class="main-container">
+  <div class="container">
+    <h1>Main Chat Room</h1>
+    <div class="message-center-container">
+      <ul class="message-center">
+        {{#each model.messages as |message|}}
+          <li>
+            <div class="message-info">
+              <span class="message-id">{{message.id}}.</span>
+              <span class="message-time">{{moment-format message.createdAt 'MMM Do, hh:mm a'}}</span>
+            </div>
+          </li>
+          <li>
+            <div class="message-container">
+              <span class="message-user">{{message.chatter.username}}</span>
+              <span class="message-content">said: {{message.content}}</span>
+            </div>
+          </li>
+        {{/each}}
+      </ul>
+      <form class="message-form" {{action sendMessage newMessage on="submit"}}>
+        {{input class="message-form__input" type="text" placeholder="Type message here. Press enter" value=newMessage}}
+        <button>Send</button>
+      </form>
+    </div>
 
-  <form {{action sendMessage newMessage on="submit"}}>
-    {{input type="text" placeholder="Type message here" value=newMessage}}
-    <button>Send</button>
-  </form>
-</ul>
+  </div>
+</div>

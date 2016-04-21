@@ -12,6 +12,17 @@ ul {
   list-style: none;
 }
 
+input {
+  padding: $gutter;
+  border: 0;
+}
+
+.app-wrapper {
+  display: flex;
+  flex-direction: column;
+  max-height: 100vh;
+}
+
 .container {
   max-width: 60rem;
   margin: auto;
