@@ -8,10 +8,11 @@ export default Ember.Controller.extend({
 
     this.get(`session`).authenticate(`authenticator:application`, email, password)
     .then(() => {
-      this.transitionToRoute(`public.main`);
+      this.transitionToRoute(`room`);
     })
-    .catch((reason) => {
-      console.log(reason);
+    .catch((err) => {
+      alert(`There was an error registering this user: ${err.errors[0].detail}.`);
+      console.log(err);
     });
   },
 });

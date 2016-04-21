@@ -1,0 +1,12 @@
+<h1>Main Chat Room</h1>
+<ul>
+  {{#each model.messages as |message|}}
+    <li>{{message.id}}. {{message.createdAt}}</li>
+    <li>{{message.chatter.username}} said: {{message.content}}</li>
+  {{/each}}
+
+  <form {{action sendMessage newMessage on="submit"}}>
+    {{input type="text" placeholder="Type message here" value=newMessage}}
+    <button>Send</button>
+  </form>
+</ul>

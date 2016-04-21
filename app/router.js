@@ -11,8 +11,8 @@ Router.map(function() {
   }, function() {
     this.route('signup');
     this.route('login');
-    this.route('main');
   });
+  this.route('room');
 });
 
 export default Router;
