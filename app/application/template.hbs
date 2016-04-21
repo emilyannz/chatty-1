@@ -1,5 +1,17 @@
-<h2 id="title">Chatty McChatterston's Whacky Place to Chat</h2>
-{{#link-to "room"}}Main Room{{/link-to}}
-{{#link-to "public.login"}}Login{{/link-to}}
-{{#link-to "public.signup"}}Sign up{{/link-to}}
+<div class="nav-container">
+  <h2 class="nav-title">Chatty McChatterston's Whacky Place to Chat</h2>
+  <div class="container">
+    <ul class="nav-links">
+      <li>
+        {{#link-to "room" class="nav-links__link"}}Main Room{{/link-to}}
+      </li>
+      <li>
+        {{#link-to "public.signup" class="nav-links__link"}}Sign up{{/link-to}}
+      </li>
+      <li>
+        {{#link-to "public.login" class="nav-links__link"}}Login{{/link-to}}
+      </li>
+    </ul>
+  </div>
+</div>
 {{outlet}}
