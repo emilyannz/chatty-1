@@ -6,6 +6,13 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
+  this.route('public', {
+    path: '/'
+  }, function() {
+    this.route('signup');
+    this.route('login');
+    this.route('main');
+  });
 });
 
 export default Router;
