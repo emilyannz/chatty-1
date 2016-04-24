@@ -1,6 +1,6 @@
 <div class="main-container">
   <div class="container">
-    <h1>Main Chat Room</h1>
+    <h1 class="room-title">Main Chat Room</h1>
     <div class="message-center-container">
       <ul class="message-center">
         {{#each model.messages as |message|}}
@@ -12,17 +12,17 @@
           </li>
           <li>
             <div class="message-container">
-              <span class="message-user">{{message.chatter.username}}</span>
-              <span class="message-content">said: {{message.content}}</span>
+              <span class="message-user">{{message.chatter.username}} said:</span>
+              <span class="message-content">{{message.content}}</span>
             </div>
           </li>
         {{/each}}
       </ul>
-      <form class="message-form" {{action sendMessage newMessage on="submit"}}>
-        {{input class="message-form__input" type="text" placeholder="Type message here. Press enter" value=newMessage}}
-        <button>Send</button>
-      </form>
     </div>
+    <form class="message-form" {{action sendMessage newMessage on="submit"}}>
+      {{input class="message-form__input" type="text" placeholder="Type message here. Press enter" value=newMessage}}
+      <button>Send</button>
+    </form>
 
   </div>
 </div>

@@ -4,10 +4,12 @@
 
 
 .nav-container {
+  flex-shrink: 0;
   background: $brand-dark-blue;
 }
 
 .nav-title {
+  margin: 0;
   color: $brand-green;
   text-align: center;
 }
@@ -15,10 +17,10 @@
 .nav-links {
   display: flex;
   justify-content: space-between;
+  background: $brand-light-blue;
 
   &__link {
     padding: $gutter / 2 $gutter;
-    border-radius: $border-radius;
     background: $brand-light-blue;
   }
 
